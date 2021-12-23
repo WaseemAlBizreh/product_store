@@ -135,6 +135,13 @@ class _RegisterState extends State<Register> {
                               ),
                               ElevatedButton(
                                   style: ButtonStyle(
+                                    padding: MaterialStateProperty.all(
+                                      EdgeInsets.fromLTRB(
+                                          constraints.minWidth * 0.2,
+                                          constraints.minHeight * 0.01,
+                                          constraints.minWidth * 0.2,
+                                          constraints.minHeight * 0.01),
+                                    ),
                                     shape: MaterialStateProperty.all(
                                       RoundedRectangleBorder(
                                         borderRadius:BorderRadius.circular(35),
