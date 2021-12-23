@@ -38,7 +38,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     Container(
-                        height: constraints.maxHeight * 0.55,
+                        height: constraints.maxHeight * 0.59,
                         child: Card(
                           margin: EdgeInsets.all(constraints.minWidth * 0.05),
                           child: Column(
@@ -48,7 +48,7 @@ class _RegisterState extends State<Register> {
                                     constraints.minWidth * 0.07,
                                     constraints.minHeight * 0.03,
                                     constraints.minWidth * 0.07,
-                                    constraints.minHeight * 0.02),
+                                    constraints.minHeight * 0.01),
                                 child: TextFormField(
                                   autocorrect: true,
                                   cursorColor: Colors.pinkAccent,
@@ -65,7 +65,7 @@ class _RegisterState extends State<Register> {
                                     constraints.minWidth * 0.07,
                                     constraints.minHeight * 0.02,
                                     constraints.minWidth * 0.07,
-                                    constraints.minHeight * 0.02),
+                                    constraints.minHeight * 0.01),
                                 child: TextFormField(
                                   autocorrect: true,
                                   cursorColor: Colors.pinkAccent,
@@ -82,7 +82,7 @@ class _RegisterState extends State<Register> {
                                     constraints.minWidth * 0.07,
                                     constraints.minHeight * 0.02,
                                     constraints.minWidth * 0.07,
-                                    constraints.minHeight * 0.02),
+                                    constraints.minHeight * 0.01),
                                 child: TextFormField(
                                   autocorrect: true,
                                   cursorColor: Colors.pinkAccent,
@@ -150,6 +150,32 @@ class _RegisterState extends State<Register> {
                                   ),
                                   onPressed: (){},
                                   child: const Text("Sign up")
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Already have an account?",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: constraints.minWidth * 0.04 ,
+                                    ),
+                                  ),
+                                  TextButton(
+                                      onPressed: () {},
+                                      style: TextButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(32.0),
+                                        ),
+                                      ),
+                                      child: Text(
+                                        "Sign in",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: constraints.minWidth * 0.04,
+                                        ),
+                                      )),
+                                ],
                               ),
                             ],
                           ),
