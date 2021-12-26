@@ -1,23 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Register extends StatefulWidget {
+class Login extends StatefulWidget {
   @override
-  State<Register> createState() => _RegisterState();
+  State<Login> createState() => _Loginstate();
 }
 
-class _RegisterState extends State<Register> {
+class _Loginstate extends State<Login> {
   bool passvisible = true;
-  bool passvisibleC = true;
 
   var namecontroller = TextEditingController();
-  var emailcontroller = TextEditingController();
   var passcontroller = TextEditingController();
-  var conpasscontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-
     return LayoutBuilder(
       builder: (context, constraints) =>
           Scaffold(
@@ -44,7 +40,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     Container(
-                        height: constraints.maxHeight * 0.55,
+                        height: constraints.maxHeight * 0.59,
                         child: Card(
                           margin: EdgeInsets.all(constraints.minWidth * 0.06),
                           child: Column(
@@ -65,29 +61,6 @@ class _RegisterState extends State<Register> {
                                       hintText: "User Name",
                                       hintStyle: TextStyle(fontSize: 15),
                                       icon: Icon(Icons.person)),
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.fromLTRB(
-                                    constraints.minWidth * 0.07,
-                                    constraints.minHeight * 0.02,
-                                    constraints.minWidth * 0.07,
-                                    constraints.minHeight * 0.01),
-                                child: TextFormField(
-                                  controller: emailcontroller,
-                                  autocorrect: true,
-                                  cursorColor: Colors.pinkAccent,
-                                  keyboardType: TextInputType.emailAddress,
-                                  textInputAction: TextInputAction.next,
-                                  decoration: const InputDecoration(
-                                      hintText: "Email",
-                                      hintStyle: TextStyle(fontSize: 15),
-                                      icon: Icon(Icons.email)),
-                                  validator: (val){
-                                    if (val!.isEmpty && val.contains('@')){
-                                      return null;}
-                                  return "Invalid E_mail" ;
-                                    },
                                 ),
                               ),
                               Container(
@@ -119,35 +92,6 @@ class _RegisterState extends State<Register> {
                                       )),
                                 ),
                               ),
-                              Container(
-                                padding: EdgeInsets.fromLTRB(
-                                    constraints.minWidth * 0.07,
-                                    constraints.minHeight * 0.02,
-                                    constraints.minWidth * 0.07,
-                                    constraints.minHeight * 0.02),
-                                child: TextFormField(
-                                  controller: conpasscontroller,
-                                  autocorrect: true,
-                                  cursorColor: Colors.pinkAccent,
-                                  keyboardType: TextInputType.visiblePassword,
-                                  textInputAction: TextInputAction.next,
-                                  obscureText: passvisible,
-                                  decoration: InputDecoration(
-                                      hintText: "Confirm Password",
-                                      hintStyle: TextStyle(fontSize: 15),
-                                      icon: Icon(Icons.lock),
-                                      suffixIcon: IconButton(
-                                        icon: Icon(passvisibleC
-                                            ? Icons.visibility
-                                            : Icons.visibility_off),
-                                        onPressed: () {
-                                          setState(() {
-                                            passvisibleC = !passvisibleC;
-                                          });
-                                        },
-                                      )),
-                                ),
-                              ),
                               ElevatedButton(
                                   style: ButtonStyle(
                                     padding: MaterialStateProperty.all(
@@ -164,29 +108,27 @@ class _RegisterState extends State<Register> {
                                     ),
                                   ),
                                   onPressed: (){},
-                                  child: const Text("Sign up")
+                                  child: const Text("Sign in")
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "Already have an account?",
+                                    "Don't have an account ?",
                                     style: TextStyle(
                                       fontWeight: FontWeight.w500,
                                       fontSize: constraints.minWidth * 0.025,
                                     ),
                                   ),
                                   TextButton(
-                                      onPressed: () {
-                                       // Navigator.pushReplacement(context,MaterialPageRoute(builder: (_)=> login());
-                                      },
+                                      onPressed: () {},
                                       style: TextButton.styleFrom(
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(32.0),
                                         ),
                                       ),
                                       child: Text(
-                                        "Sign in",
+                                        "Sign up",
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: constraints.minWidth * 0.033,
