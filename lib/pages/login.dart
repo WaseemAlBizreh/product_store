@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:product_store/pages/register.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -39,8 +40,11 @@ class _Loginstate extends State<Login> {
                         backgroundColor: Colors.transparent,
                       ),
                     ),
+                    SizedBox(
+                      height: constraints.maxHeight * 0.06,
+                    ),
                     Container(
-                        height: constraints.maxHeight * 0.59,
+                        height: constraints.maxHeight * 0.4,
                         child: Card(
                           margin: EdgeInsets.all(constraints.minWidth * 0.06),
                           child: Column(
@@ -55,12 +59,12 @@ class _Loginstate extends State<Login> {
                                   controller: namecontroller,
                                   autocorrect: true,
                                   cursorColor: Colors.pinkAccent,
-                                  keyboardType: TextInputType.text,
+                                  keyboardType: TextInputType.emailAddress,
                                   textInputAction: TextInputAction.next,
                                   decoration: const InputDecoration(
-                                      hintText: "User Name",
+                                      hintText: "Email",
                                       hintStyle: TextStyle(fontSize: 15),
-                                      icon: Icon(Icons.person)),
+                                      icon: Icon(Icons.email)),
                                 ),
                               ),
                               Container(
@@ -121,7 +125,9 @@ class _Loginstate extends State<Login> {
                                     ),
                                   ),
                                   TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => Register())) ;
+                                      },
                                       style: TextButton.styleFrom(
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(32.0),

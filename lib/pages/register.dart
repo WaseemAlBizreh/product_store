@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'login.dart';
+
 class Register extends StatefulWidget {
   @override
   State<Register> createState() => _RegisterState();
@@ -178,7 +180,7 @@ class _RegisterState extends State<Register> {
                                   ),
                                   TextButton(
                                       onPressed: () {
-                                       // Navigator.pushReplacement(context,MaterialPageRoute(builder: (_)=> login());
+                                       Navigator.pushReplacement(context,MaterialPageRoute(builder: (_)=> Login()));
                                       },
                                       style: TextButton.styleFrom(
                                         shape: RoundedRectangleBorder(
