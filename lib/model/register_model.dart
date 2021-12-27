@@ -23,16 +23,24 @@ class RegisterRequestModel {
   }
 }
 class RegisterResponseModel{
-  late bool role;
+  bool role;
   late String name ;
   late String token ;
-  late int stateuscode ;
+  int stateuscode ;
 
-  RegisterResponseModel(
-      this.role,
-      this.name,
-      this.token,
-      this.stateuscode);
+  RegisterResponseModel({
+      required this.role,
+    required this.name,
+    required this.token,
+    required this.stateuscode
+  });
 
-
+factory RegisterResponseModel.fromjson(Map<String, dynamic> jsondata){
+  return RegisterResponseModel(
+    role : jsondata['role'],
+    name : jsondata['name'],
+    token : jsondata['token'],
+    stateuscode : jsondata['stateuscode'],
+  );
+}
 }

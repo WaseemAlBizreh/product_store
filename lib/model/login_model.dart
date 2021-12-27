@@ -19,10 +19,10 @@ class LoginRequestModel {
 }
 
 class loginResponseModel{
-  late bool role;
+  bool role;
   late String name ;
   late String token ;
-  late int stateuscode ;
+  int stateuscode ;
 
   loginResponseModel({
     required this.role,
