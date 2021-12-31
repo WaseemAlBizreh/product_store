@@ -8,35 +8,41 @@ class LoginRequestModel {
       this.password,
       );
 
+
   Map<String ,dynamic> toJson(){
-    Map<String,dynamic> infregister ={
+    Map<String,dynamic> inf_register ={
       'email': email,
       'password':password ,
     };
-    return infregister;
+    return inf_register;
   }
 
 }
 
+
+
+
 class loginResponseModel{
-  bool role;
+  int id ;
   late String name ;
+  bool role;
   late String token ;
-  int stateuscode ;
+
 
   loginResponseModel({
-    required this.role,
+    required this.id,
     required this.name,
+    required this.role,
     required this.token,
-    required this.stateuscode,
   });
+
 
   factory loginResponseModel.fromJson(Map<String, dynamic> jsondata) {
     return loginResponseModel(
-      role : jsondata['role'],
+      id : jsondata['id'],
       name : jsondata['name'],
+      role : jsondata['role'],
       token : jsondata['token'],
-      stateuscode : jsondata['stateuscode'],
     );
   }
 }
