@@ -28,16 +28,16 @@ class RegisterResponseModel{
   late String token ;
 
   RegisterResponseModel({
-      required this.role,
+    required this.role,
     required this.name,
     required this.token,
   });
 
 factory RegisterResponseModel.fromjson(Map<String, dynamic> jsondata){
   return RegisterResponseModel(
-    role : jsondata['role'],
-    name : jsondata['name'],
-    token : jsondata['token'],
+    role : jsondata['role'] ?? false,
+    name : jsondata['name'] ?? "",
+    token : jsondata['token'] ?? "",
   );
 }
 }

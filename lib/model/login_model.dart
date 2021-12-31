@@ -35,10 +35,10 @@ class loginResponseModel{
 
   factory loginResponseModel.fromJson(Map<String, dynamic> jsondata) {
     return loginResponseModel(
-      id : jsondata['id'],
-      name : jsondata['name'],
-      role : jsondata['role'],
-      token : jsondata['token'],
+      id : jsondata['id'] ?? 0,
+      name : jsondata['name'] ?? "" ,
+      role : jsondata['role'] ?? false,
+      token : jsondata['token'] ?? "",
     );
   }
 }
