@@ -18,10 +18,6 @@ class LoginRequestModel {
   }
 
 }
-
-
-
-
 class loginResponseModel{
   int id ;
   late String name ;
