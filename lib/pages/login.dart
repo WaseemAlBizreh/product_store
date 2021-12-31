@@ -7,6 +7,12 @@ import 'package:provider/provider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Login extends StatelessWidget {
+  var color1 = Color(0xFF211940);
+  var color2 = Color(0xFF5c548a);
+  var color3 = Color(0xFF9887bc);
+  var color4 = Color(0xFFb897c1);
+  var color5 = Color(0xFFd983ca);
+  var color6 = Color(0xFF6f2dbd);
   final log = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -19,10 +25,11 @@ class Login extends StatelessWidget {
                   return Scaffold(
                     body: Container(
                       height: double.infinity,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage("assets/image/bg.jpg"),
-                          fit: BoxFit.cover,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [color1,color3, color2,color5]
                         ),
                       ),
                       child: SingleChildScrollView(
@@ -69,10 +76,13 @@ class Login extends StatelessWidget {
                                               cursorColor: Colors.pinkAccent,
                                               keyboardType: TextInputType.emailAddress,
                                               textInputAction: TextInputAction.next,
-                                              decoration: const InputDecoration(
+                                              decoration: InputDecoration(
                                                   hintText: "Email",
                                                   hintStyle: TextStyle(fontSize: 15),
-                                                  icon: Icon(Icons.email)),
+                                                  icon: Icon(
+                                                    Icons.email,
+                                                    color: color6,
+                                                  )),
                                             ),
                                           ),
                                           Container(
@@ -97,7 +107,7 @@ class Login extends StatelessWidget {
                                               decoration: InputDecoration(
                                                   hintText: "Password",
                                                   hintStyle: TextStyle(fontSize: 15),
-                                                  icon: Icon(Icons.lock),
+                                                  icon: Icon(Icons.lock,color: color6,),
                                                   suffixIcon: IconButton(
                                                     icon: Icon(val.passvisible
                                                         ? Icons.visibility
@@ -120,6 +130,7 @@ class Login extends StatelessWidget {
                                                     borderRadius: BorderRadius.circular(35),
                                                   ),
                                                 ),
+                                                backgroundColor:MaterialStateProperty.all(color6),
                                               ),
                                               onPressed: () {
                                                 if(log.currentState!.validate()){
@@ -161,11 +172,13 @@ class Login extends StatelessWidget {
                                                     ),
                                                   ),
                                                   child: Text(
-                                                    "Sign up", style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize:
-                                                    constraints.minWidth * 0.033,
-                                                  ),
+                                                    "Sign up",
+                                                    style: TextStyle(
+                                                      color: color6,
+                                                      fontWeight: FontWeight.bold,
+                                                      fontSize:
+                                                      constraints.minWidth * 0.033,
+                                                    ),
                                                   )),
                                             ],
                                           ),
