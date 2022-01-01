@@ -9,7 +9,12 @@ import 'login.dart';
 
 class Register extends StatelessWidget {
   final reg = GlobalKey<FormState>();
-
+  var color1 = const Color(0xFF211940);
+  var color2 = const Color(0xFF5c548a);
+  var color3 = const Color(0xFF9887bc);
+  var color4 = const Color(0xFFb897c1);
+  var color5 = const Color(0xFFd983ca);
+  var color6 = const Color(0xFF6f2dbd);
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -20,10 +25,11 @@ class Register extends StatelessWidget {
             return Scaffold(
               body: Container(
                 height: double.infinity,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/image/bg.jpg"),
-                    fit: BoxFit.cover,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [color1,color3, color2,color5]
                   ),
                 ),
                 child: SingleChildScrollView(
@@ -67,10 +73,10 @@ class Register extends StatelessWidget {
                                         cursorColor: Colors.pinkAccent,
                                         keyboardType: TextInputType.text,
                                         textInputAction: TextInputAction.next,
-                                        decoration: const InputDecoration(
+                                        decoration: InputDecoration(
                                             hintText: "User Name",
-                                            hintStyle: TextStyle(fontSize: 15),
-                                            icon: Icon(Icons.person)),
+                                            hintStyle: const TextStyle(fontSize: 15),
+                                            icon: Icon(Icons.person, color: color6,)),
                                       ),
                                     ),
                                     Container(
@@ -86,10 +92,10 @@ class Register extends StatelessWidget {
                                         cursorColor: Colors.pinkAccent,
                                         keyboardType: TextInputType.emailAddress,
                                         textInputAction: TextInputAction.next,
-                                        decoration: const InputDecoration(
+                                        decoration: InputDecoration(
                                             hintText: "Email",
-                                            hintStyle: TextStyle(fontSize: 15),
-                                            icon: Icon(Icons.email)),
+                                            hintStyle: const TextStyle(fontSize: 15),
+                                            icon: Icon(Icons.email , color: color6,)),
                                         validator: (value) {
                                           if (value!.isEmpty ||
                                               !value.contains('@')) {
@@ -122,7 +128,7 @@ class Register extends StatelessWidget {
                                         decoration: InputDecoration(
                                             hintText: "Password",
                                             hintStyle: TextStyle(fontSize: 15),
-                                            icon: Icon(Icons.lock),
+                                            icon: Icon(Icons.lock , color: color6,),
                                             suffixIcon: IconButton(
                                               icon: Icon(val.passvisible
                                                   ? Icons.visibility
@@ -158,7 +164,7 @@ class Register extends StatelessWidget {
                                         decoration: InputDecoration(
                                             hintText: "Confirm Password",
                                             hintStyle: TextStyle(fontSize: 15),
-                                            icon: Icon(Icons.lock),
+                                            icon: Icon(Icons.lock , color: color6,),
                                             suffixIcon: IconButton(
                                               icon: Icon(val.passvisibleC
                                                   ? Icons.visibility
@@ -182,6 +188,7 @@ class Register extends StatelessWidget {
                                               BorderRadius.circular(35),
                                             ),
                                           ),
+                                          backgroundColor:MaterialStateProperty.all(color6),
                                         ),
                                         onPressed: () {
                                           if (reg.currentState!.validate()) {
@@ -234,6 +241,7 @@ class Register extends StatelessWidget {
                                             child: Text(
                                               "Sign in",
                                               style: TextStyle(
+                                                color: color6,
                                                 fontWeight: FontWeight.bold,
                                                 fontSize:
                                                 constraints.minWidth * 0.033,
