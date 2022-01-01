@@ -1,5 +1,39 @@
 class Products_Req_Model{
+   int category_id ;
+  late String expration_date;
+  int price;
+  int fifteen;
+  int quantity;
+  int therty;
+  double phone_number;
+  late String name;
+  late  String image_path;
 
+   Products_Req_Model({
+      required this.category_id,
+      required this.expration_date,
+      required this.price,
+      required this.fifteen,
+      required this.quantity,
+      required this.therty,
+      required this.phone_number,
+      required this.name,
+      required this.image_path});
+
+   Map<String ,dynamic> toJson() {
+     Map<String, dynamic> inf_product = {
+       'category_id': category_id,
+       'expration_date': expration_date,
+       'price': price,
+       'fifteen': fifteen,
+       'quantity': quantity,
+       'therty': therty,
+       'phone_number': phone_number,
+       'name': name,
+       'image_path': image_path,
+     };
+     return inf_product;
+   }
 }
 
 
