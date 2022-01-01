@@ -12,37 +12,40 @@ class Home extends StatelessWidget {
   var color6 = const Color(0xFF6f2dbd);
   @override
   Widget build(BuildContext context) {
-    return Consumer<ProductListView>(
-      builder:(context, value, child){
-        value.productlist();
-        return LayoutBuilder(
-            builder: (context, constraints) {
-              return Scaffold(
-                appBar: AppBar(
-                  actions: [
-                    IconButton(
-                      icon: const Icon(Icons.search),
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
-                body: Container(
-                  child: ListView.builder(
-                      itemCount: value.productslist.length,
-                      itemBuilder: (ctx, index) {
-                        return Container(
-                          margin: const EdgeInsets.all(3),
-                          child: InkWell(
-                            onTap: () {},
-                            child: Text(value.productslist[index].name),
-                          ),
-                        );
-                      }),
-                ),
-              );
-            });
-      },
+    return ChangeNotifierProvider(
+      create: (_) => ProductListView(),
+      child: Consumer<ProductListView>(
+        builder:(context, value, child){
+          value.productlist();
+          return LayoutBuilder(
+              builder: (context, constraints) {
+                return Scaffold(
+                  appBar: AppBar(
+                    actions: [
+                      IconButton(
+                        icon: const Icon(Icons.search),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                  body: Container(
+                    child: ListView.builder(
+                        itemCount: value.productslist.length,
+                        itemBuilder: (ctx, index) {
+                          return Container(
+                            margin: const EdgeInsets.all(3),
+                            child: InkWell(
+                              onTap: () {},
+                              child: Text(value.productslist[index].name),
+                            ),
+                          );
+                        }),
+                  ),
+                );
+              });
+        },
 
+      ),
     );
   }
 }
