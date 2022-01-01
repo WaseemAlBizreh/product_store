@@ -7,12 +7,13 @@ import 'package:provider/provider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Login extends StatelessWidget {
-  var color1 = Color(0xFF211940);
-  var color2 = Color(0xFF5c548a);
-  var color3 = Color(0xFF9887bc);
-  var color4 = Color(0xFFb897c1);
-  var color5 = Color(0xFFd983ca);
-  var color6 = Color(0xFF6f2dbd);
+  var color1 = const Color(0xFF211940);
+  var color2 = const Color(0xFF5c548a);
+  var color3 = const Color(0xFF9887bc);
+  var color4 = const Color(0xFFb897c1);
+  var color5 = const Color(0xFFd983ca);
+  var color6 = const Color(0xFF6f2dbd);
+
   final log = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -106,7 +107,7 @@ class Login extends StatelessWidget {
                                               obscureText: val.passvisible,
                                               decoration: InputDecoration(
                                                   hintText: "Password",
-                                                  hintStyle: TextStyle(fontSize: 15),
+                                                  hintStyle: const TextStyle(fontSize: 15),
                                                   icon: Icon(Icons.lock,color: color6,),
                                                   suffixIcon: IconButton(
                                                     icon: Icon(val.passvisible
