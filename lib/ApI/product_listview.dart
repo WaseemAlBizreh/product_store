@@ -35,7 +35,7 @@ class ProductListView with ChangeNotifier {
       _productslist = productslist;
       notifyListeners();
     } else {
-      throw Exception('Failed to load products');
+      throw "Error : Can't load products";
     }
   }
 }

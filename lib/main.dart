@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'ApI/product_listview.dart';
 import 'Pages/register.dart';
+import 'pages/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +20,10 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner:false,
       title: 'Product Store',
-      home: Register(),
+      home: ChangeNotifierProvider<ProductListView>(
+          create: (_)=> ProductListView(),
+          child: Home()
+      ),
     );
   }
 }
