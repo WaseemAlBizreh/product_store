@@ -6,6 +6,8 @@ import 'package:http/http.dart' as http;
 import 'package:product_store/model/login_model.dart';
 import 'package:product_store/model/register_model.dart';
 
+import '../Token.dart';
+
 class pro_auth with ChangeNotifier{
   var _namecontroller = TextEditingController();
   var _emailcontroller = TextEditingController();
@@ -61,7 +63,10 @@ class pro_auth with ChangeNotifier{
   Future login (LoginRequestModel lrm) async{
     http.Response response = await  http.post(
       Uri.parse('https://reqres.in/api/login'),
-      headers:{'Accept': 'application/json'},
+      headers: {
+        'Accept': 'application/json',
+        'Authorization' : token,
+      },
       body:lrm.toJson(),
     ).catchError((e){
       if (e is SocketException) {
@@ -88,8 +93,9 @@ class pro_auth with ChangeNotifier{
   Future register (RegisterRequestModel rrm) async{
     http.Response response = await  http.post(
       Uri.parse(''),
-      headers:{
-        'Accept': 'application/json'
+      headers: {
+        'Accept': 'application/json',
+        'Authorization' : token,
       },
       body:rrm.toJson(),
     ).catchError((e){
