@@ -21,6 +21,8 @@ class Home extends StatelessWidget {
               builder: (context, constraints) {
                 return Scaffold(
                   appBar: AppBar(
+                    title: Text('Product Store'),
+                    backgroundColor: color6,
                     actions: [
                       IconButton(
                         icon: const Icon(Icons.search),
@@ -29,6 +31,9 @@ class Home extends StatelessWidget {
                     ],
                   ),
                   body: Container(
+                    decoration: BoxDecoration(
+                      color: color4,
+                    ),
                     child: ListView.builder(
                         itemCount: value.productslist.length,
                         itemBuilder: (ctx, index) {
@@ -36,21 +41,31 @@ class Home extends StatelessWidget {
                             margin: const EdgeInsets.all(3),
                             child: InkWell(
                               onTap: () {},
-                              child: Container(
-                                child: Card(
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        width: constraints.maxWidth * 0.4,
-                                        child: Image.network(
-                                            'https://www.gpdecor.nl/wp-content/uploads/2014/02/Product-300x232.jpg', //change value.productslist[index].image_path
-                                            fit: BoxFit.fitWidth),
-                                      ),
-                                      Text(value.productslist[index].name),
-                                    ],
+                              child: Card(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: color5,
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          width: constraints.maxWidth * 0.4,
+                                          child: Image.network(
+                                              'https://www.gpdecor.nl/wp-content/uploads/2014/02/Product-300x232.jpg', //change value.productslist[index].image_path
+                                              fit: BoxFit.fitWidth),
+                                        ),
+                                        SizedBox(width: constraints.maxWidth*0.1,),
+                                        Text(
+                                            value.productslist[index].name,
+                                            style: TextStyle(
+                                              fontSize: 30,
+                                              color: color1,
+                                            ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
                             ),
                           );
                         }),
