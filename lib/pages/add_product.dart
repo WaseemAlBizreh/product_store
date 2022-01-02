@@ -7,15 +7,14 @@ class add_product extends StatelessWidget {
     return Scaffold(
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-          return Container(
-            child: Column(
-              children: [
-                Container(
-                  child: Card(),
-                ),
-                Container()
-              ],
-            ),
+          return SingleChildScrollView(
+            child: Container(
+              child:Column(
+                children: [
+
+                ],
+              ),
+              ),
           );
         },
       ),
