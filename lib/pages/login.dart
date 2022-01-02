@@ -114,7 +114,8 @@ class Login extends StatelessWidget {
                                                         ? Icons.visibility
                                                         : Icons.visibility_off),
                                                     onPressed: val.set_passvisible,
-                                                  )),
+                                                  )
+                                              ),
                                             ),
                                           ),
                                           ElevatedButton(
