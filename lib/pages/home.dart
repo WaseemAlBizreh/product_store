@@ -4,76 +4,89 @@ import 'package:product_store/ApI/product_listview.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatelessWidget {
-  var color1 = const Color(0xFF211940);
-  var color2 = const Color(0xFF5c548a);
-  var color3 = const Color(0xFF9887bc);
-  var color4 = const Color(0xFFb897c1);
-  var color5 = const Color(0xFFd983ca);
-  var color6 = const Color(0xFF6f2dbd);
+  var color1 = const Color(0xFF022534);
+  var color2 = const Color(0xFF08546c);
+  var color3 = const Color(0xFFa0bacc);
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => ProductListView(),
       child: Consumer<ProductListView>(
-        builder:(context, value, child){
+        builder: (context, value, child) {
           value.productlist();
-          return LayoutBuilder(
-              builder: (context, constraints) {
-                return Scaffold(
-                  appBar: AppBar(
-                    title: Text('Product Store'),
-                    backgroundColor: color6,
-                    actions: [
-                      IconButton(
-                        icon: const Icon(Icons.search),
-                        onPressed: () {},
-                      ),
-                    ],
+          return LayoutBuilder(builder: (context, constraints) {
+            return Scaffold(
+              appBar: AppBar(
+                title: Text('Product Store'),
+                backgroundColor: color1,
+                actions: [
+                  IconButton(
+                    icon: const Icon(Icons.search),
+                    onPressed: () {},
                   ),
-                  body: Container(
-                    decoration: BoxDecoration(
-                      color: color4,
-                    ),
-                    child: ListView.builder(
-                        itemCount: value.productslist.length,
-                        itemBuilder: (ctx, index) {
-                          return Container(
-                            margin: const EdgeInsets.all(3),
-                            child: InkWell(
-                              onTap: () {},
-                              child: Card(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      color: color5,
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          width: constraints.maxWidth * 0.4,
-                                          child: Image.network(
-                                              'https://www.gpdecor.nl/wp-content/uploads/2014/02/Product-300x232.jpg', //change value.productslist[index].image_path
-                                              fit: BoxFit.fitWidth),
-                                        ),
-                                        SizedBox(width: constraints.maxWidth*0.1,),
-                                        Text(
-                                            value.productslist[index].name,
-                                            style: TextStyle(
-                                              fontSize: 30,
-                                              color: color1,
-                                            ),
-                                        ),
-                                      ],
+                ],
+              ),
+              body: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
+                child: ListView.builder(
+                    itemCount: value.productslist.length,
+                    itemBuilder: (ctx, index) {
+                      return Container(
+                        margin: const EdgeInsets.all(3),
+                        child: InkWell(
+                          onTap: () {},
+                          child: Card(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xff6596ff).withOpacity(0.5),
+                              ),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: constraints.maxWidth * 0.4,
+                                    child: Image.network(
+                                        'https://www.gpdecor.nl/wp-content/uploads/2014/02/Product-300x232.jpg', //change value.productslist[index].image_path
+                                        fit: BoxFit.fitWidth),
+                                  ),
+                                  SizedBox(
+                                    width: constraints.maxWidth * 0.1,
+                                  ),
+                                  Text(
+                                    value.productslist[index].name,
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                      color: color1,
                                     ),
                                   ),
-                                ),
+                                ],
+                              ),
                             ),
-                          );
-                        }),
+                          ),
+                        ),
+                      );
+                    }),
+              ),
+              bottomNavigationBar: BottomNavigationBar(
+                backgroundColor: color1,
+                items: const<BottomNavigationBarItem>[
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.home),
+                      label:'Home'
                   ),
-                );
-              });
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.person),
+                      label:'Profile'
+                  ),
+                ],
+                currentIndex: value.selectedIndex,
+                selectedItemColor: color3,
+                onTap: value.onTabItem,
+              ),
+            );
+          });
         },
-
       ),
     );
   }
