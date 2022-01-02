@@ -1,8 +1,3 @@
-class Products_Req_Model{
-
-}
-
-
 class Products_Response_Model{
 
   late String name;
