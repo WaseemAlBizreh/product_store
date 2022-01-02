@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 class Home extends StatelessWidget {
   var color1 = const Color(0xFF211940);
-  var color2 = const Color(0xff5c548a);
+  var color2 = const Color(0xFF5c548a);
   var color3 = const Color(0xFF9887bc);
   var color4 = const Color(0xFFb897c1);
   var color5 = const Color(0xFFd983ca);
@@ -21,7 +21,6 @@ class Home extends StatelessWidget {
               builder: (context, constraints) {
                 return Scaffold(
                   appBar: AppBar(
-                    backgroundColor: color6,
                     actions: [
                       IconButton(
                         icon: const Icon(Icons.search),
@@ -30,9 +29,6 @@ class Home extends StatelessWidget {
                     ],
                   ),
                   body: Container(
-                    decoration: BoxDecoration(
-                      color: color3.withOpacity(0.5),
-                    ),
                     child: ListView.builder(
                         itemCount: value.productslist.length,
                         itemBuilder: (ctx, index) {
@@ -40,24 +36,25 @@ class Home extends StatelessWidget {
                             margin: const EdgeInsets.all(3),
                             child: InkWell(
                               onTap: () {},
-                              child: Text(value.productslist[index].name),
+                              child: Container(
+                                child: Card(
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        width: constraints.maxWidth * 0.4,
+                                        child: Image.network(
+                                            'https://www.gpdecor.nl/wp-content/uploads/2014/02/Product-300x232.jpg', //change value.productslist[index].image_path
+                                            fit: BoxFit.fitWidth),
+                                      ),
+                                      Text(value.productslist[index].name),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
                           );
                         }),
                   ),
-                  bottomNavigationBar: BottomNavigationBar(
-                    items: [
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.home),
-                        label: 'home',
-                        backgroundColor: color6
-                      ),
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.person),
-                          label: 'Profile',
-                          backgroundColor: Colors.red,
-                      )
-                    ],),
                 );
               });
         },
