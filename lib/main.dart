@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner:false,
       title: 'Product Store',
-      home:Home(),
+      home: Home(),
     );
   }
 }
