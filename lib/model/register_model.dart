@@ -17,7 +17,7 @@ class RegisterRequestModel {
       'name':name ,
       'email': email ,
       'password':password ,
-      'conf_password':conf_password
+      'password_confirmation':conf_password
     };
     return infregister;
   }
@@ -37,7 +37,7 @@ factory RegisterResponseModel.fromjson(Map<String, dynamic> jsondata){
   return RegisterResponseModel(
     role : jsondata['role'] ?? false,
     name : jsondata['name'] ?? "",
-    token : jsondata['token'] ?? "",
+    token : jsondata['access_token'] ?? "",
   );
 }
 }

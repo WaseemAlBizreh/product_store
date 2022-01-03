@@ -201,7 +201,9 @@ class Register extends StatelessWidget {
                                             RegisterRequestModel registerM =
                                             RegisterRequestModel(
                                                 name, email, pass, conpass);
-                                            val.register(registerM).catchError((e) {
+                                            val.register(registerM).then((value) {
+                                              print(value.token);
+                                            }).catchError((e) {
                                               Fluttertoast.showToast(
                                                   msg: e.toString(),
                                                   toastLength: Toast.LENGTH_LONG,
