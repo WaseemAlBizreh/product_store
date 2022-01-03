@@ -47,7 +47,6 @@ class Listproduct extends StatelessWidget {
       builder: (context, value, child) {
         value.productlist();
         return LayoutBuilder(builder: (context, constraints) {
-          print(token);
           return Scaffold(
             appBar: AppBar(
               title: Text('Product Store'),
@@ -66,6 +65,7 @@ class Listproduct extends StatelessWidget {
               child: ListView.builder(
                   itemCount: value.productslist.length,
                   itemBuilder: (ctx, index) {
+                    print(token);
                     return Container(
                       margin: const EdgeInsets.all(3),
                       child: InkWell(

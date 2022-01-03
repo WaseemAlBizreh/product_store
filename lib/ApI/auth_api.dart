@@ -62,11 +62,9 @@ class pro_auth with ChangeNotifier{
 
   Future login (LoginRequestModel lrm) async{
     http.Response response = await  http.post(
-      Uri.parse('http://127.0.0.1:8000 /api/auth/login'),
+      Uri.parse('https://reqres.in/api/login'),
       headers: {
         'Accept': 'application/json',
-        'Authorization' : 'Barer ${token}',
-
       },
       body:lrm.toJson(),
     ).catchError((e){
@@ -79,7 +77,7 @@ class pro_auth with ChangeNotifier{
     if (response.statusCode == 200) {
       _log = loginResponseModel.fromJson(jsonDecode(response.body));
       notifyListeners();
-      token = _log.token;
+      return _log;
     }
     if (response.statusCode == 400){
       throw 'User not found';

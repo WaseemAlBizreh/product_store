@@ -21,16 +21,16 @@ class add_product extends StatelessWidget {
             child: Container(
               child:Column(
                 children: [
-              TextField(
-              autocorrect: true,
-              cursorColor: Colors.pinkAccent,
-              keyboardType: TextInputType.name,
-              textInputAction: TextInputAction.next,
-              decoration: InputDecoration(
-              hintText: "Product Name",
-              hintStyle: const TextStyle(fontSize: 15),
-              ),
-              ),
+                  TextField(
+                    autocorrect: true,
+                    cursorColor: Colors.pinkAccent,
+                    keyboardType: TextInputType.name,
+                    textInputAction: TextInputAction.next,
+                    decoration: InputDecoration(
+                      hintText: "Product Name",
+                      hintStyle: const TextStyle(fontSize: 15),
+                    ),
+                  ),
                   TextField(
                     autocorrect: true,
                     cursorColor: Colors.pinkAccent,
@@ -51,59 +51,26 @@ class add_product extends StatelessWidget {
                       hintStyle: const TextStyle(fontSize: 15),
                     ),
                   ),
-                  // TextField(
-                  //   autocorrect: true,
-                  //   cursorColor: Colors.pinkAccent,
-                  //   keyboardType: TextInputType.number,
-                  //   textInputAction: TextInputAction.next,
-                  //   decoration: InputDecoration(
-                  //     hintText: "Discount",
-                  //     hintStyle: const TextStyle(fontSize: 15),
-                  //     icon: Icon(Icons.lock,color: color6,),
-                  //     suffixIcon: IconButton(
-                  //       icon: Icon(val.passvisible
-                  //           ? Icons.visibility
-                  //           : Icons.visibility_off),
-                  //       onPressed: val.set_passvisible,
-                  //     ),
-                  //   ),
-                  // ),
-                  // TextField(
-                  //   autocorrect: true,
-                  //   cursorColor: Colors.pinkAccent,
-                  //   keyboardType: TextInputType.visiblePassword,
-                  //   textInputAction: TextInputAction.next,
-                  //   obscureText: val.passvisible,
-                  //   decoration: InputDecoration(
-                  //     hintText: "Password",
-                  //     hintStyle: const TextStyle(fontSize: 15),
-                  //     icon: Icon(Icons.lock,color: color6,),
-                  //     suffixIcon: IconButton(
-                  //       icon: Icon(val.passvisible
-                  //           ? Icons.visibility
-                  //           : Icons.visibility_off),
-                  //       onPressed: val.set_passvisible,
-                  //     ),
-                  //   ),
-                  // ),
-                  // TextField(
-                  //   autocorrect: true,
-                  //   cursorColor: Colors.pinkAccent,
-                  //   keyboardType: TextInputType.visiblePassword,
-                  //   textInputAction: TextInputAction.next,
-                  //   obscureText: val.passvisible,
-                  //   decoration: InputDecoration(
-                  //     hintText: "Password",
-                  //     hintStyle: const TextStyle(fontSize: 15),
-                  //     icon: Icon(Icons.lock,color: color6,),
-                  //     suffixIcon: IconButton(
-                  //       icon: Icon(val.passvisible
-                  //           ? Icons.visibility
-                  //           : Icons.visibility_off),
-                  //       onPressed: val.set_passvisible,
-                  //     ),
-                  //   ),
-                  // ),
+                  TextField(
+                    autocorrect: true,
+                    cursorColor: Colors.pinkAccent,
+                    keyboardType: TextInputType.number,
+                    textInputAction: TextInputAction.next,
+                    decoration: InputDecoration(
+                      hintText: "Discount Before 30 day %",
+                      hintStyle: const TextStyle(fontSize: 15),
+                    ),
+                  ),
+                  TextField(
+                    autocorrect: true,
+                    cursorColor: Colors.pinkAccent,
+                    keyboardType: TextInputType.number,
+                    textInputAction: TextInputAction.next,
+                    decoration: InputDecoration(
+                      hintText: "Discount Before 15 day %",
+                      hintStyle: const TextStyle(fontSize: 15),
+                    ),
+                  ),
                 ],
               ),
             ),

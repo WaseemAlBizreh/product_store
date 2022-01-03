@@ -140,7 +140,9 @@ class Login extends StatelessWidget {
                                                 if(log.currentState!.validate()){
                                                   LoginRequestModel loginM = LoginRequestModel(
                                                       val.email.text ,val.pass.text);
-                                                  val.login(loginM).catchError((e){
+                                                  val.login(loginM).then((value){
+                                                    token = value.token;
+                                                  } ).catchError((e){
                                                     Fluttertoast.showToast(
                                                         msg: e.toString(),
                                                         toastLength: Toast.LENGTH_LONG,
@@ -151,10 +153,12 @@ class Login extends StatelessWidget {
                                                         fontSize: 16.0
                                                     );
                                                   });
-                                                  Navigator.pushReplacement(context,
-                                                      MaterialPageRoute(builder: (_) {
-                                                        return Home();
-                                                      }));
+                                                  if(token != ""){
+                                                    Navigator.pushReplacement(context,
+                                                        MaterialPageRoute(builder: (_) {
+                                                          return Home();
+                                                        }));
+                                                  }
                                                 }},
                                               child:const Text("Sign in")),
                                           Row(
