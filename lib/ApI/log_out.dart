@@ -12,7 +12,7 @@ class log_out with ChangeNotifier {
       Uri.parse(''),
       headers: {
         'Accept': 'application/json',
-        'Authorization': token,
+        'Authorization' : 'Barer ${token}',
       },
     ).catchError((e) {
       if (e is SocketException) {

@@ -62,9 +62,11 @@ class pro_auth with ChangeNotifier{
 
   Future login (LoginRequestModel lrm) async{
     http.Response response = await  http.post(
-      Uri.parse(''),
+      Uri.parse('http://127.0.0.1:8000 /api/auth/login'),
       headers: {
         'Accept': 'application/json',
+        'Authorization' : 'Barer ${token}',
+
       },
       body:lrm.toJson(),
     ).catchError((e){
@@ -92,7 +94,7 @@ class pro_auth with ChangeNotifier{
 
   Future register (RegisterRequestModel rrm) async{
     http.Response response = await  http.post(
-      Uri.parse(''),
+      Uri.parse('http://127.0.0.1:8000 /api/auth/signup'),
       headers: {
         'Accept': 'application/json',
       },

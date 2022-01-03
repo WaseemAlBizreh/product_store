@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:product_store/ApI/product_listview.dart';
 import 'package:provider/provider.dart';
+
+import '../Token.dart';
 var color1 = const Color(0xFF022534);
 var color2 = const Color(0xFF08546c);
 var color3 = const Color(0xFFa0bacc);
@@ -45,6 +47,7 @@ class Listproduct extends StatelessWidget {
       builder: (context, value, child) {
         value.productlist();
         return LayoutBuilder(builder: (context, constraints) {
+          print(token);
           return Scaffold(
             appBar: AppBar(
               title: Text('Product Store'),

@@ -211,6 +211,7 @@ class Register extends StatelessWidget {
                                                   textColor: Colors.white,
                                                   fontSize: 16.0
                                               );
+                                              print(token);
                                             });
                                             Navigator.pushReplacement(context,
                                                 MaterialPageRoute(builder: (_) {
