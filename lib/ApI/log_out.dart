@@ -9,7 +9,7 @@ import '../Token.dart';
 class log_out with ChangeNotifier {
   Future login() async {
     http.Response response = await http.get(
-      Uri.parse('https://reqres.in/api/login'),
+      Uri.parse(''),
       headers: {
         'Accept': 'application/json',
         'Authorization': token,
