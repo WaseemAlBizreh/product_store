@@ -142,6 +142,7 @@ class Login extends StatelessWidget {
                                                       val.email.text ,val.pass.text);
                                                   val.login(loginM).then((value){
                                                     token = value.token;
+                                                    print(value.token);
                                                   } ).catchError((e){
                                                     Fluttertoast.showToast(
                                                         msg: e.toString(),
@@ -153,11 +154,22 @@ class Login extends StatelessWidget {
                                                         fontSize: 16.0
                                                     );
                                                   });
+                                                  print(token);
                                                   if(token != ""){
                                                     Navigator.pushReplacement(context,
                                                         MaterialPageRoute(builder: (_) {
                                                           return Home();
                                                         }));
+                                                  }else{
+                                                    Fluttertoast.showToast(
+                                                        msg:'press more time',
+                                                        toastLength: Toast.LENGTH_LONG,
+                                                        gravity: ToastGravity.BOTTOM,
+                                                        timeInSecForIosWeb: 1,
+                                                        backgroundColor: Colors.redAccent,
+                                                        textColor: Colors.white,
+                                                        fontSize: 16.0
+                                                    );
                                                   }
                                                 }},
                                               child:const Text("Sign in")),

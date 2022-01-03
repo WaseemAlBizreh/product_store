@@ -9,6 +9,8 @@ class add_products with ChangeNotifier {
   late Products_Res_Model _addpro;
 
   var _nameproductcontroller = TextEditingController();
+  var _dateproductcontroller = TextEditingController();
+  var _imageproductcontroller = TextEditingController();
   var _categorycontroller = TextEditingController();
   var _pricecontroller = TextEditingController();
   var _thertycontroller = TextEditingController();
@@ -17,11 +19,12 @@ class add_products with ChangeNotifier {
   var _Phonecontroller = TextEditingController();
 
   Future addproduct(Products_Req_Model prm) async {
-    http.Response response = await http.post(
+    http.Response response = await http
+        .post(
       Uri.parse('https://pastebin.com/raw/9GNBwPN6'),
       headers: {
         'Accept': 'application/json',
-        'Authorization' : 'Bearer ${token}',
+        'Authorization': 'Bearer ${token}',
       },
       body: prm.toJson(),
     )
@@ -37,7 +40,18 @@ class add_products with ChangeNotifier {
     } else {}
   }
 
+  get path => _imageproductcontroller;
+  set_path(String value) {
+    _imageproductcontroller.text = value;
+    notifyListeners();
+  }
+
   Products_Res_Model get addpro => _addpro;
+  get date => _dateproductcontroller;
+  set_date(String value) {
+    _dateproductcontroller.text = value;
+    notifyListeners();
+  }
 
   get Phone => _Phonecontroller;
 
@@ -77,7 +91,7 @@ class add_products with ChangeNotifier {
   get category => _categorycontroller;
 
   set_category(String value) {
-    _categorycontroller.text=value;
+    _categorycontroller.text = value;
     notifyListeners();
   }
 
