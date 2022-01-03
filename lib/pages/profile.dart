@@ -26,49 +26,20 @@ class profile extends StatelessWidget {
                     width: double.infinity,
                     height: double.infinity,
                     color: color2,
-                    child: Card(
-                      child: Container(
-                        child: Row(
-                          children: [
-                            Container(
-                                width: constraints.maxWidth * 0.4,
-                                child: const Icon(Icons.person)
+                    child:Row(
+                        children: [
+                          Container(
+                            width: constraints.maxWidth * 0.4,
+                            margin: EdgeInsets.all(0.2),
+                            child: CircleAvatar(
+                              backgroundImage: AssetImage("assets/image/per.png"),
                             ),
-                      //       SizedBox(
-                      //         width: constraints.maxWidth * 0.1,
-                      //       ),
-                      //       Column(children: [
-                      //         Container(
-                      //           child: ListTile(
-                      //             title: Text(value.name.text),
-                      //             subtitle: Text(value.email.text),
-                      //           ),
-                      //         ),
-                      //         Container(
-                      //             alignment: Alignment.bottomRight,
-                      //             child: ElevatedButton(
-                      //               child: Text("Log Out"),
-                      //               onPressed: () {},
-                      //               style: ButtonStyle(
-                      //                 padding: MaterialStateProperty.all(
-                      //                   EdgeInsets.fromLTRB(
-                      //                       constraints.minWidth * 0.01,
-                      //                       constraints.minHeight * 0.015,
-                      //                       constraints.minWidth * 0.01,
-                      //                       constraints.minHeight * 0.015),
-                      //                 ),
-                      //                 shape: MaterialStateProperty.all(
-                      //                   RoundedRectangleBorder(
-                      //                     borderRadius:
-                      //                     BorderRadius.circular(35),
-                      //                   ),
-                      //                 ),
-                      //               ),
-                      //             ))
-                      //       ])
-                          ],
-                        ),
-                      ),
+                          ),
+                          ListTile(
+                            title: value.name,
+                            subtitle: value.email,
+                          )
+                        ]
                     ),
                   ),
                 );
