@@ -24,65 +24,15 @@ class profile extends StatelessWidget {
                   body: Container(
                     width: double.infinity,
                     height: double.infinity,
-                    color: color2,
+                    color: color3,
                     child: Card(
-                      child: Container(
-                        child: Row(
-                          children: [
-                            Container(
-                                width: constraints.maxWidth * 0.4,
-                                child: const Icon(Icons.person)
-                            ),
-                      //       SizedBox(
-                      //         width: constraints.maxWidth * 0.1,
-                      //       ),
-                      //       Column(children: [
-                      //         Container(
-                      //           child: ListTile(
-                      //             title: Text(value.name.text),
-                      //             subtitle: Text(value.email.text),
-                      //           ),
-                      //         ),
-                      //         Container(
-                      //             alignment: Alignment.bottomRight,
-                      //             child: ElevatedButton(
-                      //               child: Text("Log Out"),
-                      //               onPressed: () {},
-                      //               style: ButtonStyle(
-                      //                 padding: MaterialStateProperty.all(
-                      //                   EdgeInsets.fromLTRB(
-                      //                       constraints.minWidth * 0.01,
-                      //                       constraints.minHeight * 0.015,
-                      //                       constraints.minWidth * 0.01,
-                      //                       constraints.minHeight * 0.015),
-                      //                 ),
-                      //                 shape: MaterialStateProperty.all(
-                      //                   RoundedRectangleBorder(
-                      //                     borderRadius:
-                      //                     BorderRadius.circular(35),
-                      //                   ),
-                      //                 ),
-                      //               ),
-                      //             ))
-                      //       ])
-                          ],
+                            color: color2,
+                            child: ListTile(
+                            title: Text('hello'),
                         ),
                       ),
                     ),
-                  ),
-                  bottomNavigationBar: BottomNavigationBar(
-                    backgroundColor: color1,
-                    items: const <BottomNavigationBarItem>[
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.home), label: 'Home'),
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.person), label: 'Profile'),
-                    ],
-                    currentIndex: val.selectedIndex,
-                    selectedItemColor: color3,
-                    onTap: val.onTabItem,
-                  ),
-                );
+                  );
               });
             },
           );
