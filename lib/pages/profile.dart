@@ -13,7 +13,8 @@ class profile extends StatelessWidget {
     return ChangeNotifierProvider<pro_auth>(
       create: (_) => pro_auth(),
       child: Consumer<ProductListView>(
-        builder: (context, val, child) {
+        builder: (context, val, child)
+        {
           return Consumer<pro_auth>(
             builder: (context, value, child) {
               return LayoutBuilder(builder: (context, constraints) {
