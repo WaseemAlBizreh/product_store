@@ -21,7 +21,7 @@ class add_products with ChangeNotifier {
       Uri.parse('https://pastebin.com/raw/9GNBwPN6'),
       headers: {
         'Accept': 'application/json',
-        'Authorization' : 'Barer ${token}',
+        'Authorization' : 'Bearer ${token}',
       },
       body: prm.toJson(),
     )

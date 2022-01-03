@@ -32,7 +32,7 @@ class ProductListView with ChangeNotifier {
       Uri.parse('https://pastebin.com/raw/9GNBwPN6'),
       headers: {
         'Accept': 'application/json',
-        'Authorization' : 'Barer ${token}',
+        'Authorization' : 'Bearer ${token}',
       },
     ).catchError((e) {
       if (e is SocketException) {

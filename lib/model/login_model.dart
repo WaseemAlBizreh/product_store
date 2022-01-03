@@ -38,7 +38,7 @@ class loginResponseModel{
       id : jsondata['id'] ?? 0,
       name : jsondata['name'] ?? "" ,
       role : jsondata['role'] ?? false,
-      token : jsondata['token'] ?? "",
+      token : jsondata['access_token'] ?? "",
     );
   }
 }

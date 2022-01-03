@@ -93,6 +93,18 @@ class Listproduct extends StatelessWidget {
                                     color: color1,
                                   ),
                                 ),
+                                TextButton(
+                                    onPressed: null,
+                                    child:Row(
+                                      children: [
+                                        IconButton(
+                                          onPressed: null,
+                                          icon: Icon(Icons.visibility),
+                                        ),
+                                        Text('${value.productslist[index].v}'),
+                                      ],
+                                    )
+                                )
                               ],
                             ),
                           ),
