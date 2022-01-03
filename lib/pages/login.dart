@@ -1,10 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:product_store/ApI/auth_api.dart';
 import 'package:product_store/model/login_model.dart';
 import 'package:product_store/pages/register.dart';
 import 'package:provider/provider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+import '../Token.dart';
+import 'home.dart';
 
 class Login extends StatelessWidget {
   var color1 = const Color(0xFF211940);
@@ -149,7 +151,10 @@ class Login extends StatelessWidget {
                                                         fontSize: 16.0
                                                     );
                                                   });
-                                                  print(val.log_model.token);
+                                                  Navigator.pushReplacement(context,
+                                                      MaterialPageRoute(builder: (_) {
+                                                        return Home();
+                                                      }));
                                                 }},
                                               child:const Text("Sign in")),
                                           Row(

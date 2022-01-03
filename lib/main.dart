@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:product_store/Token.dart';
+import 'package:product_store/pages/login.dart';
 import 'pages/home.dart';
 
 void main() {
@@ -6,7 +8,6 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -17,7 +18,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner:false,
       title: 'Product Store',
-      home: Home(),
+      home: token == "" ? Login() : Home(),
     );
   }
 }

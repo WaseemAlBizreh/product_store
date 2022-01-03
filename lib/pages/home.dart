@@ -2,14 +2,35 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:product_store/ApI/product_listview.dart';
 import 'package:provider/provider.dart';
+var color1 = const Color(0xFF022534);
+var color2 = const Color(0xFF08546c);
+var color3 = const Color(0xFFa0bacc);
 class Home extends StatelessWidget{
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_)=> ProductListView(),
       child: Consumer<ProductListView>(
         builder: (context, value, child){
-          return Center(
-            child: value.widgetOptions.elementAt(value.selectedIndex),
+          return Scaffold(
+            body : Center(
+              child: value.widgetOptions.elementAt(value.selectedIndex),
+            ),
+            bottomNavigationBar: BottomNavigationBar(
+              backgroundColor: color1,
+              items: const<BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.home),
+                    label:'Home'
+                ),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.person),
+                    label:'Profile'
+                ),
+              ],
+              currentIndex: value.selectedIndex,
+              selectedItemColor: color3,
+              onTap: value.onTabItem,
+            ),
           );
         },
       ),
@@ -18,9 +39,6 @@ class Home extends StatelessWidget{
   
 }
 class Listproduct extends StatelessWidget {
-  var color1 = const Color(0xFF022534);
-  var color2 = const Color(0xFF08546c);
-  var color3 = const Color(0xFFa0bacc);
   @override
   Widget build(BuildContext context) {
     return Consumer<ProductListView>(
@@ -79,22 +97,6 @@ class Listproduct extends StatelessWidget {
                       ),
                     );
                   }),
-            ),
-            bottomNavigationBar: BottomNavigationBar(
-              backgroundColor: color1,
-              items: const<BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.home),
-                    label:'Home'
-                ),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.person),
-                    label:'Profile'
-                ),
-              ],
-              currentIndex: value.selectedIndex,
-              selectedItemColor: color3,
-              onTap: value.onTabItem,
             ),
           );
         });

@@ -24,7 +24,7 @@ class add_product extends StatelessWidget {
 
                 ],
               ),
-              ),
+            ),
           );
         },
       ),

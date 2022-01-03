@@ -5,6 +5,8 @@ import 'package:product_store/model/register_model.dart';
 import 'package:provider/provider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import '../Token.dart';
+import 'home.dart';
 import 'login.dart';
 
 class Register extends StatelessWidget {
@@ -210,7 +212,10 @@ class Register extends StatelessWidget {
                                                   fontSize: 16.0
                                               );
                                             });
-                                            print(val.reg_model.token);
+                                            Navigator.pushReplacement(context,
+                                                MaterialPageRoute(builder: (_) {
+                                                  return Home();
+                                                }));
                                           }
                                         },
                                         child: const Text("Sign up")),

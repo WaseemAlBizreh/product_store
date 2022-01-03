@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:product_store/ApI/auth_api.dart';
 import 'package:product_store/ApI/product_listview.dart';
@@ -69,18 +68,6 @@ class profile extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                  bottomNavigationBar: BottomNavigationBar(
-                    backgroundColor: color1,
-                    items: const <BottomNavigationBarItem>[
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.home), label: 'Home'),
-                      BottomNavigationBarItem(
-                          icon: Icon(Icons.person), label: 'Profile'),
-                    ],
-                    currentIndex: val.selectedIndex,
-                    selectedItemColor: color3,
-                    onTap: val.onTabItem,
                   ),
                 );
               });
